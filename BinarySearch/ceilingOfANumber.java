@@ -1,10 +1,10 @@
-import javax.print.attribute.standard.Sides;
+package BinarySearch;
 
 public class ceilingOfANumber {
 
   public static void main(String[] args) {
     int[] arr = { 2, 3, 5, 9, 14, 16, 19 };
-    int target = 5;
+    int target = 15;
     int answer = binary_search(arr, 0, arr.length - 1, target);
     System.out.println(answer);
   }
@@ -21,6 +21,6 @@ public class ceilingOfANumber {
         binary_search(nums, start, end, target);
       }
     }
-    return nums[(start + end) / 2 + 1];
+    return nums[(start + end) / 2];
   }
 }
