@@ -2,9 +2,12 @@ public class LinkedList {
 
   public static void main(String[] args) {
     LLDoubly list = new LLDoubly();
+    list.insertAtFirst(3);
+    list.insertAtFirst(2);
     list.insertAtFirst(1);
     list.insertAtFirst(0);
     list.display();
+    list.printInReverse();
     // LLSingly list = new LLSingly();
 
     // list.insertAtLast(0);
