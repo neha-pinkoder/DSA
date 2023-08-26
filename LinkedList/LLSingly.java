@@ -47,6 +47,21 @@ public class LLSingly {
     temp.next = node;
   }
 
+  //insert with rec
+  public void insertAfterRec(int val, int index) {
+    head = insertAfterRec(head, index, val);
+  }
+
+  private Node insertAfterRec(Node node, int index, int val) {
+    if (index == -1) {
+      Node newNode = new Node(val, node);
+      size++;
+      return newNode;
+    }
+    node.next = insertAfterRec(node.next, index - 1, val);
+    return node;
+  }
+
   public void deleteFirst() {
     head = head.next;
     if (head == null) {

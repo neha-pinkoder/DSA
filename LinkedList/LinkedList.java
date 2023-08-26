@@ -1,13 +1,18 @@
 public class LinkedList {
 
   public static void main(String[] args) {
-    LLDoubly list = new LLDoubly();
+    // LLDoubly list = new LLDoubly();
+    LLSingly list = new LLSingly();
     list.insertAtFirst(3);
     list.insertAtFirst(2);
     list.insertAtFirst(1);
     list.insertAtFirst(0);
+    list.insertAtLast(4);
+    // list.insertLast(4);
+    // list.insertAfter(10, 2);
+    list.insertAfterRec(10, 3);
     list.display();
-    list.printInReverse();
+    // list.printInReverse();
     // LLSingly list = new LLSingly();
 
     // list.insertAtLast(0);

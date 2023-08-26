@@ -22,6 +22,34 @@ public class LLDoubly {
     size++;
   }
 
+  public void insertLast(int val) {
+    if (head == null) {
+      insertAtFirst(val);
+      return;
+    }
+    Node node = new Node(val);
+    tail.next = node;
+    node.prev = tail;
+    tail = node;
+    size++;
+  }
+
+  public void insertAfter(int val, int afterValue) {
+    Node node = new Node(val);
+    Node prevNode = head;
+    for (int i = 1; i < size; i++) {
+      if (prevNode.value == afterValue) {
+        break;
+      }
+      prevNode = prevNode.next;
+    }
+    node.next = prevNode.next;
+    prevNode.next = node;
+    node.prev = prevNode;
+    node.next.prev = node;
+    size++;
+  }
+
   public void display() {
     Node node = head;
     for (int i = 0; i < size; i++) {
@@ -32,13 +60,12 @@ public class LLDoubly {
   }
 
   public void printInReverse() {
-    Node node = tail;
+    Node last = tail;
     System.out.print("END");
     for (int i = 0; i < size; i++) {
-      System.out.print(" -> " + node.value);
-      node = node.prev;
+      System.out.print(" -> " + last.value);
+      last = last.prev;
     }
-    node = tail;
   }
 
   private class Node {
