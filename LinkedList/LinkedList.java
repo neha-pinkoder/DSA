@@ -10,7 +10,8 @@ public class LinkedList {
     list.insertAtLast(4);
     // list.insertLast(4);
     // list.insertAfter(10, 2);
-    list.insertAfterRec(10, 3);
+    // list.insertAfterRec(10, 3);
+    list.swap(0, 1);
     list.display();
     // list.printInReverse();
     // LLSingly list = new LLSingly();

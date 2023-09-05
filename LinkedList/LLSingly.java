@@ -116,6 +116,19 @@ public class LLSingly {
     return -1;
   }
 
+  public void swap(int index1, int index2) {
+    Node node1 = get(index1);
+    Node node2 = get(index2);
+    // Node head = node2
+    node1.next = node2.next;
+    node2.next = node1;
+    if (node1 == head) {
+      head = node2;
+    } else if (node2 == tail) {
+      tail = node1;
+    }
+  }
+
   public Node get(int index) {
     Node temp = head;
     for (int i = 1; i < index; i++) {
